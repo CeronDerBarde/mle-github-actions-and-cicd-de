@@ -1,3 +1,5 @@
+a
+
 # GitHub Actions
 
 GitHub Actions ist die in GitHub eingebaute Automatisierungsplattform. In ML-Projekten kannst du damit vor dem Merge von Code Tests ausführen, die Formatierung prüfen, Container bauen, versionierte Daten herunterladen oder Jobs für das Modelltraining auslösen.
@@ -19,7 +21,6 @@ flowchart TD
 ## Test-Workflow erstellen
 
 1. Erstell auf GitHub für diese Aufgabe ein **neues, leeres Repository** und mach es **öffentlich**. Es wird nur in Lektion 1 genutzt. Halte es getrennt von dem ML-Repository, das du aus diesem Template erstellt hast und das in den Lektionen 2 bis 5 genutzt wird.
-
 2. Klon das Repository, wechsle mit `cd` hinein und richte es als uv-Projekt mit Python 3.13 und pytest ein:
 
    ```bash
@@ -29,14 +30,12 @@ flowchart TD
    ```
 
    Das erstellt `pyproject.toml` und `uv.lock`. Nimm beide zusammen mit `.python-version` in einen Commit auf, damit GitHub Actions genau dieselbe Umgebung installiert.
-
 3. Erstell `src/calculator.py`:
 
    ```python
    def add(a, b):
        return a + b
    ```
-
 4. Erstell `tests/test_calculator.py`:
 
    ```python
@@ -48,7 +47,6 @@ flowchart TD
        assert add(-2, 2) == 0
        assert add(0, 0) == 0
    ```
-
 5. Erstell `.github/workflows/test.yaml`:
 
    ```yaml
@@ -80,9 +78,7 @@ flowchart TD
          - name: Run tests
            run: uv run python -m pytest
    ```
-
 6. Lade diese Startdateien nach `main` hoch.
-
 7. Geh zu **Settings > Branches > Add classic branch protection rule** und leg Folgendes fest:
 
    - Branch name pattern: `main`
